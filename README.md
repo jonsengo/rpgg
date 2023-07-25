@@ -1,16 +1,32 @@
 # rpgg
 基于 python的rppg测心跳算法
+
 1.硬件要求
+
   需要 /dev/videoX 
+  
   树莓派4b或类似设备 
+  
 2.软件要求 
+
   opencv 等，缺什么自己看着错误信息安装 
+  
 3.如何使用 
+
   cd rppg
-  python Commit changes
-Commit summary
-Add files via upload
-Optional extended description
-Add an optional extended description…
- Commit directly to the main branch.
- Create a new branch for this commit and start a pull request. Learn more about pull requests.
+  
+  python webvideo_rppg.py
+
+  与设备在同一个网段 ，浏览器打开  192.168.xxx.xxx:5001 打开web 端可以看到 摄像头视频 
+
+  将脸 凑上去，保持不动，画面上即可有 心跳
+
+4.原理 
+
+  摄像头的 视频帧->opencv人脸识别 ->得到 ROI感兴趣区域 -> 灰度图 -> 得到强度  -> 带通滤波  -> fft ->得到 心跳 
+
+5.计划 
+
+  人脸识别加入深度学习之类的算法，心跳稳定性需要提高 
+  
+  
